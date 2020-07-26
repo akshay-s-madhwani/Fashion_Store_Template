@@ -1,15 +1,19 @@
 window.onload = function(){
-function table(nav){
+function hov(nav, e){
 	$(nav).hover(function(){
-		$(".hover-link").show();
+		$(e).show();
 	},
 	function(){
-		$(".hover-link").hide();	
+		$(e).hide();	
 	});
 };
-table(".men");
-table(".women");
-table(".accessories");
+hov(".men", ".men-link");
+hov(".women", ".women-link" );
+hov(".accessories", ".access-link");
+//hov(".user-list-wrap", ".user-link");
+//hov(".cart-list-wrap", ".cart-link");
+//hov(".book-list-wrap", ".book-link");
+hov(".wallet-list-wrap", ".wallet-pop");
 const imgs = $('img');
 document.addEventListener('click', showItem);
 const close = document.querySelector('.close');
@@ -25,8 +29,8 @@ function showItem(e){
     console.log(e)
 if (element.srcElement.className == 'item-img slide-img'){
     shadow.style.display = 'grid';
-	head.text = $('.slide-head').text;
-    name.text = $('.item-name').text;
+	head.text =e.toElement.innerText;
+    name.innerText = e.toElement.innerText;
 img.setAttribute('src',e.srcElement.currentSrc);   
 //'img/ian-dooley-TT-ROxWj9nA-unsplash.jpg' ;//e.srcElement.currentSrc;
 	
