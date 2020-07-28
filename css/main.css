@@ -364,22 +364,6 @@ i{
   align-items: center;
   z-index: 10;
  }
-.covering-block>i{
-    position: fixed;
-    top:5vh;
-    right:18vw;
-    color:black;
-    font-size: 18pt;
-    font-family: sans-serif;
-}
-.covering-block::before{
-    content: '';
-    opacity:0.3;
-}
-.covering-block::after{
-    content: '';
-    opacity: 0.5;
-}
 .card{
   max-width:55vw;
     min-width: 30vw;
@@ -388,98 +372,101 @@ i{
     padding-right: 5px;
   margin-top: -20px;
   border-radius: 20px;
-  display: grid;
-    grid-auto-flow: row;
-    grid-row-gap: 0.2rem;
-  grid-template-columns:42.2vw 235px;
-  grid-template-rows:10vh 370px 1vh 10vh;
-  grid-template-areas: 
-  'des des des blnk'
-  'img img img i'
-  'img img img i'
-  'img img img i'
-  'img img img i'
-  'img img img cost'
-  'name name name blnk'
-  'buy buy buy buy';
-grid-row-gap:0.5pt;
-    grid-column-gap: 10px;
-    min-width:0;
-    min-height: 0;
-overflow: none;
+  display:flex;
+    flex-flow: column nowrap;
+overflow: auto;
 box-sizing: border-box;
   background-color: #eee;
     box-shadow: 300px 300px 500px 400px #999, -300px -300px 500px 400px #999;
 }
-@media screen(min-width:1366px){
-    .card{
-    grid-template-columns:;
-    }
-}
-.covering-block>i{
+.close{
     position: fixed;
-    
-}
-.blank{
-    min-width:0;
-    min-height: 0;
-    grid-column-end: 3;
-    margin-right: -10;
-    grid-area: 'blnk';
+    right:25vw;
 }
 .card-des{
-   grid-area: 'des';
-  border-bottom: 0.3px #aaa solid;
-   text-align: center;
-   font-size: 16pt;
-   background-color:#eee;
-    min-width:117%;
+    border-bottom: 1px #aaa solid;
+    min-width: 100%;
+    margin-left: -5vw;
+    margin-right: -5vw;
+    
+    text-align: center;
+    
+}
+.card-display{
+    display: flex;
+    flex-flow: column wrap;
+    min-width: 35vmin;
+    max-width: 65vmin;
+    max-height:45vh; 
 }
 .card-img{
-  grid-area: 'img';
-  width:220px;
-  max-height: 390px;
-    min-height:200px;
+    min-width: 35vmin;
+    max-width: 43vmin;
+  min-height:45vh;
+    max-height: 55vh;
     border-radius: 20px;
-    margin-right: 20px;
 }
 .card-icons{
 width: 10%;
-  min-height: 60%;
+  min-height: 50vh;
   text-align: center;
     display:inline-flex;
     flex-flow:column nowrap;
     align-content: space-around;
     justify-content: space-around;
-  grid-area: 'i';
+    margin-top: 10px;
+    margin-right: 10px;
     color:#777;
     opacity:0.8;
 }
+@media (min-width:700px) and (max-width:1200px){
+    .card-display{
+    margin-left: 8vw;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1400px){
+    .card-display{
+    margin-left: 17vw;
+    }
+}
 .card-cost{
-  grid-area: 'cost';
-  color:#e2d;
+  color:blue;
+    width: 50px;
     font-weight:100;
     font-size: 16pt;
     font-weight: bold;
+    background: #4f4;
+    border-top-left-radius: 30%;
+        border-bottom-left-radius: 30%;
+    margin-right: -5px;
 }
 .card-name{
-    width:80%;
+    width:100%;
     max-height: 1%;
     font-weight:bold;
-    font-size: 12pt;
+    font-size: 14pt;
   text-align: center;
-  grid-area: 'name';
 min-height: 30%;
 }
+.img-context{
+    width: 80%;
+    height: 40%;
+    margin-top: -30vh;
+    margin-left: 5vw;
+    text-align: left;
+}
 .buy-btn{
-  grid-area: 'buy';
 border-radius: 10px;
 /*background: linear-gradient(lightblue,magenta);*/
     background-color:dodgerblue;
     font-family:sans-serif;
     color:#eee;
-    max-height: 40px;
-    min-height:30px;
+    min-height: 5.5vh;
+    max-height: 6vh;
+    border: 0px;
+    min-width: 150%;
+    margin-left: -14vw;
 }
 
 .user-icon ul{
@@ -763,19 +750,17 @@ color:floralwhite;}
         width:100vw;
         height: 30vmin;
         min-width: 50vw;
-        margin-left: 50vw;
+        margin-left: 10vw;
     }
 }
 @media (min-width:815px) and (max-width:1400px){
     .men-ad-img{
         width:100vw;
         height: 29vmin;
-        min-width: 50vw;
-        margin-left: 25vw;
+        min-width: 40vw;
+        margin-left: 10vw;
     }
-    .footer th{
-        margin-left: -10vw;
-    }
+    
 }
 
 .follow{
@@ -821,7 +806,7 @@ color:floralwhite;}
     min-height: 70%;
 }
 .footer th{
-    padding-right: 1em;
+    padding-right: 5em;
 }
 
 .footer td{
@@ -831,8 +816,18 @@ color:floralwhite;}
     margin-right: 30px;
     padding-left:15px;
 }
+@media (min-width:815px) and (max-width:1400px){
 
-
+.footer table{
+    min-width: 90vw;
+        margin-left: 5rem;
+        padding-right: 25rem;
+    }
+    .footer th{
+        width: 30px;
+        padding-right: 6rem;
+    }
+}
 
 
 
