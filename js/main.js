@@ -24,7 +24,8 @@ hov(".wallet-list-wrap", ".wallet-pop");
 	let price = document.querySelector('.card-cost');
 	let name = document.querySelector('.card-name');
 	let wallet = document.querySelector('.amount');
-	let balance = parseInt(wallet.innerText,10);
+	let balance = parseInt(wallet.innerText.slice(1),10);
+    
 function showItem(e){
 	let element = e;
 	console.log(e)
@@ -34,14 +35,18 @@ function showItem(e){
             name.innerText = e.srcElement.nextElementSibling.childNodes[1].innerText;
             head.innerText = e.srcElement.parentElement.parentElement.previousElementSibling.innerHTML;
             cost = e.srcElement.parentElement.childNodes[5].childNodes[3].innerHTML;
-            cost = parseInt(cost,10);
+           let Cost = parseInt(cost.slice(1),10);
+            
                 price.innerText = cost;
             function buy() {
-		      balance -= cost;
-                alert(balance);
-		      if (cost > balance){
+		      balance -= Cost;
+                alert("Added in cart:"+name.innerText);
+		      if (Cost > balance){
 			     alert('Not enough money!!');
+                  return null;
 		      }
+                wallet.innerText = `'$'${balance}`;
+                alert('Remaining Balance :'+balance)
 		      return balance;
             }
         buyBtn.addEventListener('click',buy);
