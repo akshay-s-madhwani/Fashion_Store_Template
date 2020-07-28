@@ -1,4 +1,6 @@
+
 window.onload = function(){
+
 function hov(nav, e){
 	$(nav).hover(function(){
 		$(e).show();
@@ -7,42 +9,63 @@ function hov(nav, e){
 		$(e).hide();	
 	});
 };
+    
 hov(".men", ".men-link");
 hov(".women", ".women-link" );
 hov(".accessories", ".access-link");
-//hov(".user-list-wrap", ".user-link");
-//hov(".cart-list-wrap", ".cart-link");
-//hov(".book-list-wrap", ".book-link");
 hov(".wallet-list-wrap", ".wallet-pop");
-const imgs = $('img');
-document.addEventListener('click', showItem);
-const close = document.querySelector('.close');
-
-function showItem(e){
-	let element = e;
-	const display = document.querySelector('.card');
-	const shadow = document.querySelector('.covering-block');
+            document.addEventListener('click', showItem);   
+    const buyBtn = document.querySelector('.buy-btn');
+    const close = document.querySelector('.close'); 
+    const shadow = document.querySelector('.covering-block');
+    const display = document.querySelector('.card');
 	let head = document.querySelector('.card-des');
 	let img = document.querySelector('.card-img');
 	let price = document.querySelector('.card-cost');
 	let name = document.querySelector('.card-name');
-    console.log(e)
-if (element.srcElement.className == 'item-img slide-img'){
-    shadow.style.display = 'grid';
-	head.text =e.toElement.innerText;
-    name.innerText = e.toElement.innerText;
-img.setAttribute('src',e.srcElement.currentSrc);   
-//'img/ian-dooley-TT-ROxWj9nA-unsplash.jpg' ;//e.srcElement.currentSrc;
-	
+	let wallet = document.querySelector('.amount');
+	let balance = parseInt(wallet.innerText,10);
+function showItem(e){
+	let element = e;
+	console.log(e)
+        if (element.srcElement.className == 'item-img slide-img'){
+            shadow.style.display = 'grid';
+            img.setAttribute('src',e.srcElement.currentSrc);   
+            name.innerText = e.srcElement.nextElementSibling.childNodes[1].innerText;
+            head.innerText = e.srcElement.parentElement.parentElement.previousElementSibling.innerHTML;
+            cost = e.srcElement.parentElement.childNodes[5].childNodes[3].innerHTML;
+            cost = parseInt(cost,10);
+                price.innerText = cost;
+            function buy() {
+		      balance -= cost;
+                alert(balance);
+		      if (cost > balance){
+			     alert('Not enough money!!');
+		      }
+		      return balance;
+            }
+        buyBtn.addEventListener('click',buy);
         }
-     close.onclick = function(){
-        shadow.style.display = 'none';             };
-    shadow.focusout= function(){
-        this.style.display = 'none'; 
+    
+    }   
+    
+        function closeCard(e){
+            e.onclick = function(){
+            shadow.style.display = 'none'; 
+        }
+    
     }
-
-    }
+       closeCard(shadow || close);
 }
+// for (i in Womens) {
+// 	for (j in Womens[i]){
+// 		if(i ==0 )
+// 			{
+			
+// 			console.log(img.src);
+// 		}
+// 	}
+// }
 
 // const display = document.createElement(div);
 // const shadow = document.createElement(div);

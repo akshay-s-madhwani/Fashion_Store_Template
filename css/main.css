@@ -17,10 +17,13 @@
   --fourth-darkgreen:#035E7B;
   --fifth-purple:#2F004F;
 }
+
 html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+    max-width: 100vw;
+    
 }
 
 /*
@@ -57,6 +60,7 @@ hr {
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
+    
 }
 
 /*
@@ -91,10 +95,10 @@ textarea {
    ========================================================================== */
 
 .browserupgrade {
-  margin: 0.2em 0;
+  margin: 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0;
+  padding: 0;
 }
 
 /* ==========================================================================
@@ -104,6 +108,11 @@ body{
   margin:0;
   padding:0;
   background:var(--primary-pink);
+    display: flex;
+    flex-flow: column wrap;
+    max-width:100vw;
+    overflow-x: hidden;
+    box-sizing: content-box;
 }
 .landing{
   width:100vw;
@@ -114,19 +123,19 @@ body{
 .front-img{
   max-height: 40vh;
   max-width: 40vh;
-  margin-left: 55vw;
+  margin-left: 30vw;
   margin-top: -10vh;
   position: absolute;
 }
 .front-img2{
   max-height: 40vh;
   max-width: 40vh;
-  margin-left: 35vw;
+  margin-left: 10vw;
   margin-top: -12vh;
   position: absolute;
 }
 .header-wrap{
-  width:50vh;
+  width:40vh;
   height: 42vh;
   margin-top: 20vh;
   margin-left: 10vw;
@@ -134,7 +143,7 @@ body{
   word-wrap: break-word;
 }
 .front-header{
-  font-family: Abril Fatface;
+  font-family: 'Oswald';
   font-weight: bold;
 }
 .front-p{
@@ -142,28 +151,34 @@ body{
   font-size: 14pt;
 }
 .headbar{
-
-  width: 100vw;
+  max-width: 100vw;
+    min-width: 100vw;
   height: 2vmin;
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content:space-around;
+  justify-content:space-between;
   align-items: center;
   padding-bottom: 25pt;
-  font-family:serif; 
+  font-family:'Merienda'; 
 }
 .headbar a{
   color:var(--fifth-purple);
-  margin-left: 0.4rem;
-  margin-top: .4rem;
-  font-size: 12pt;
+  margin-left: .2rem;
+  margin-top: .6rem;
+  font-size: 8pt;
   font-weight: 18pt;
-  alignment-baseline: baseline;
+}
+@media (min-width:360px) and max-width(600px){
+    .headbar a{
+        font-size: 8pt;
+    }
 }
 .headbar .nav-tag:nth-child(1){
   position: relative;
-  top:-8.77px
+    top: -6px;
+    margin-left: -4vw;
+    
 }
 @media (min-width: 1366px) {
   .headbar a{
@@ -172,6 +187,8 @@ body{
   }
     .search-block{
         margin-left: 6vw;
+        width: 19vw;
+        margin-right: 2vw;
     }
   
 }
@@ -184,12 +201,14 @@ body{
   display: inline-flex;
   padding:5px;
   margin:.2rem;
+    margin-left: 1rem;
 }
 .search-block{
-  width: 30%;
+  width: 30vw;
   height: 15pt;
   padding-left:15px;
-  margin-left: 10px;
+  margin-left: 3rem;
+    margin-right: 1rem;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
@@ -197,7 +216,7 @@ body{
 }
 
 .user-icon{
-  width: 25.32vw;
+  min-width: 29vw;
   height: 6vh;
   display: inline-flex;
   padding:5px;
@@ -211,23 +230,25 @@ body{
   width:35%;
   height: auto;
   display: none;
-  background-color: #ddd;
+  background-color: #cce;
   position:fixed;
   left:10%;
   top:8%;
   z-index: 10;
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: 15px;
+  padding: 7px;
 }
 
 .hover-link tr{
-margin-right: 10em;
+margin-right: 5em;
 }
-.link-head{
-  margin-right:14pt;
+.hover-link th{
+  position: relative;
+    padding-right: 2em;
 }
 .navmen{
   margin:0;
+    font-family: 'Merienda';
 }
 
 .navlogo{
@@ -265,6 +286,7 @@ i{
   margin-left: 10px;
   display:flex;
   flex-wrap: wrap;
+    align-content: space-around;
   background-color: var(--primary-pink);
   z-index: 0;
 }
@@ -296,6 +318,8 @@ i{
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: center;
+    padding-bottom: 30vh;
+    margin-bottom: -30vh;
 }
 @media (max-width:1366px){
   .brand-img-block{
@@ -308,7 +332,6 @@ i{
   width: 22vmin;
   margin:10vmin;
   margin-bottom: 10vmin;
-  margin-top: vmin;
   display:flex;
   flex-flow:row wrap;
   justify-content: space-around;
@@ -318,13 +341,13 @@ i{
 .brand-name{
   align-self: flex-end;
   margin-left: 10px;
-  font-family: serif;
+  font-family: 'Oswald';
   font-size:12pt;
   font-weight: 10pt;
 }
 .brand-img{
-  max-height: 30vmin;
-  min-height: 28vmin;
+  max-height: 38vmin;
+  min-height: 38vmin;
   max-width: 32vmin;
   min-width: 31vmin;
   border-radius: 40px;
@@ -333,7 +356,6 @@ i{
 .covering-block{
   width:100vw;
   height: 100vh;
-  background: ;
   position: fixed;
   top:0;
   display: none;
@@ -359,7 +381,8 @@ i{
     opacity: 0.5;
 }
 .card{
-  width:55vw;
+  max-width:55vw;
+    min-width: 30vw;
   height: 90vh;
   padding-left: 15px;
     padding-right: 5px;
@@ -368,8 +391,8 @@ i{
   display: grid;
     grid-auto-flow: row;
     grid-row-gap: 0.2rem;
-  grid-template-columns:42vw 165px;
-  grid-template-rows:10vh 370px 1vh 12vh;
+  grid-template-columns:42.2vw 235px;
+  grid-template-rows:10vh 370px 1vh 10vh;
   grid-template-areas: 
   'des des des blnk'
   'img img img i'
@@ -414,9 +437,9 @@ box-sizing: border-box;
 }
 .card-img{
   grid-area: 'img';
-  width:230px;
+  width:220px;
   max-height: 390px;
-    min-height:auto;
+    min-height:200px;
     border-radius: 20px;
     margin-right: 20px;
 }
@@ -451,7 +474,8 @@ min-height: 30%;
 .buy-btn{
   grid-area: 'buy';
 border-radius: 10px;
-background: linear-gradient(lightblue,magenta);
+/*background: linear-gradient(lightblue,magenta);*/
+    background-color:dodgerblue;
     font-family:sans-serif;
     color:#eee;
     max-height: 40px;
@@ -468,6 +492,7 @@ background: linear-gradient(lightblue,magenta);
     width: 100px;
     position: fixed;
     display:none;
+    filter: saturate(180%);
     z-index: 5;
 }
 .user-icon ul li{
@@ -498,9 +523,9 @@ animation: list 2s ease-in 1 normal forwards;
 }
 
 .fa-user:hover~.user-link li:nth-child(3){
--webkit-animation: list 8s ease-in 1 normal forwards;
--o-animation: list 8s ease-in 1 normal forwards;
-animation: list 8s ease-in 1 normal forwards;
+-webkit-animation: list 2.7s ease-in 1 normal forwards;
+-o-animation: list 2.7s ease-in 1 normal forwards;
+animation: list 2.7s ease-in 1 normal forwards;
     display: flex;
 }
 
@@ -538,6 +563,7 @@ animation: list 3s ease-in 1 normal forwards;
 -webkit-animation: list 3.5s ease-in 1 normal forwards;
 -o-animation: list 3.5s ease-in 1 normal forwards;
 animation: list 3.5s ease-in 1 normal forwards;
+    display: flex;
 }
 .fa-bookmark:hover~.book-link{
     display: flex;
@@ -557,18 +583,12 @@ animation: list 2s ease-in 1 normal forwards;
 }
 
 .fa-bookmark:hover~.book-link li:nth-child(3){
--webkit-animation: list 8s ease-in 1 normal forwards;
--o-animation: list 8s ease-in 1 normal forwards;
-animation: list 8s ease-in 1 normal forwards;
+-webkit-animation: list 1s ease-in 1s normal forwards;
+-o-animation: list 1s ease-in 1s normal forwards;
+animation: list 1s ease-in 1s normal forwards;
     display: flex;
 }
 
-.fa-bookmark:hover~.book-link li:nth-child(4){
--webkit-animation: list 3.5s ease-in 1 normal forwards;
--o-animation: list 3.5s ease-in 1 normal forwards;
-animation: list 3.5s ease-in 1 normal forwards;
-    display: flex;
-}
 
 @keyframes list{
     0%{display: flex;transform: rotateX(180deg);}
@@ -580,40 +600,67 @@ animation: list 3.5s ease-in 1 normal forwards;
 .user-link{
     
 }
+.wallet-pop{
+    position:fixed;
+    right:20px;
+    top:7vh;
+    text-align: center;
+    width:130px;
+    border-radius: 25px;
+    background-color:rgba(230,230,230,1);
+    border:2px rgba(210,210,210,0.4) solid;
+    display: none;
+}
+.amount{
+    border:1px rgba(180,180,180,0.6) solid;
+    border-radius: 20px;
+    background-color:rgba(120,120,120,0.2); 
+    position: relative;
+    top:-15px;
+    margin-left: 8px;
+    width: 110px;
+    padding: 2px;
+}
 
 .Cwrap{
   width: 100vw;
-  height: 90vmin;
-  margin-top: 10%;
+  height: 95vmin;
+  margin-top: 20px;
   display: flex;
   flex-flow: column nowrap;
   -ms-overflow-style: panner;
   overflow-style: panner;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
-  background: #bd5393;
+  background: rgba(235, 59, 165,0.6);
 }
+
 .slide-block{
   width: 100vw;
-  max-height: 60vmin;
+  max-height: 90vmin;
+    padding-top: 10px;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: center;
-   
+    overflow-x: scroll;
 }
 .slide-header{
-background: linear-gradient(145deg,#e9f06c,#9e6cf0);
+background: linear-gradient(145deg,#eee,#9e6cf0);
 }
 .slide-wrap{
-  width:240vw;
-  max-height: 60vmin;
+  width:300vw;
+    min-width: 250vw;
+  max-height: 70vmin;
   display: inline-flex;
   flex-flow: row wrap;
+    padding-top: 10px;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 .slide-img-wrap{
   margin-bottom: 5rem;
-  margin-left: 2rem;
+  margin-left: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -621,27 +668,34 @@ background: linear-gradient(145deg,#e9f06c,#9e6cf0);
 .img-bad{
     min-height: 51vw;
 }
-.it{
-   box-shadow: 4px 3px 12px 6px #bd8755 , -4px -4px 20px 6px #fccfa4;
+#ws{
+   box-shadow: 4px 4px 20px 6px #9B3772, -4px -4px 30px 6px #F470BD;
    
 }
 .slide-img{
   max-width: 50vmin;
-  max-height: 50vmin;
+  max-height: 40vmin;
+    min-width: 40vmin;
+    min-height: 50vmin;
   border-radius: 30px;
     cursor: pointer;
 }
-.slide-img::hover,
-:focus {
+.slide-img::hover {
  min-width: 55vmin;
   max-height: 55vmin; 
 }
-.slide-details-wrap{}
+.slide-details-wrap{
+    margin-bottom: -10px
+}
 
-.women-item-wrap{}
-.women-header{} /*==.slide-header*/
+.women-item-wrap{
+    margin-top: 9%;
+}
+.women-header{
+    font-family:' Oswald';
+} /*==.slide-header*/
 .item-name{
-    font-family: sans-serif;
+    font-family: 'Fredoka One',sans-serif;
     font-weight: 800;
     font-size: 12pt;
     margin-bottom: -10px;
@@ -676,9 +730,8 @@ color:floralwhite;}
   position: absolute;
   margin-top: -40px;
   width: 100vw;
-
   background:linear-gradient(180deg,#652fbd,#5b3e8a,#392757);
-    font-family: sans-serif;
+    font-family:'Oswald' sans-serif;
     color:cornsilk;
     padding-left: 10px;
     
@@ -690,44 +743,38 @@ color:floralwhite;}
     margin-top:20px;
 }
 .men-ad-wrap{
+    max-width: 100vw;
   max-height: 30vmin;
   margin-top: 110px;
     display: inline-flex;
-    flex-direction: column wrap;
-    align-content: space-between;
+    flex-direction: row wrap;
+    align-content: center;
+    background: black;
 }
 .men-ad-img{
+    align-self: flex-end;
+    margin-left: 9vw;
     max-height: 30vmin;
-    min-width: 50%;
-    
-}
-.men-ad-img:nth-child(2){
-    width: 50%;
-    height: 30vmin;
-    margin-top:-33vh;
-    margin-left: 50%;
+    min-width: 90vw;
     
 }
 @media (min-width:500px) and (max-width:815px){
     .men-ad-img{
         width:100vw;
-        height: 100%;
-    }
-    .men-ad-img:nth-child(2){
-        visibility: hidden;
+        height: 30vmin;
+        min-width: 50vw;
+        margin-left: 50vw;
     }
 }
-@media (min-width:815px) and (max-width:1235px){
+@media (min-width:815px) and (max-width:1400px){
     .men-ad-img{
-    max-height: 100%;
-    min-width: 50%;
+        width:100vw;
+        height: 29vmin;
+        min-width: 50vw;
+        margin-left: 25vw;
     }
-    .men-ad-img:nth-child(2){
-        width: 50%;
-    height: 30vmin;
-    margin-top: -20vh;
-    margin-left: 50%;
-    
+    .footer th{
+        margin-left: -10vw;
     }
 }
 
@@ -752,13 +799,16 @@ color:floralwhite;}
     color:red;
 }
 .fa-cart-plus{
-    color:indianred
+    color:black;
+    opacity: 0.9;
 }
 .fa-bookmark{
-    color:midnightblue;
+    color:lavenderblush;
 }
 .footer{
-  width:100vw;
+  max-width:100vw;
+    min-width: 100vw;
+    overflow: auto;
   height: 30vh;
     position: relative;
   background-color: rgba(25,25,25,0.9);
@@ -767,9 +817,16 @@ color:floralwhite;}
 }
 .footer table{
     position: relative;
+    min-width: 80vw;
+    min-height: 70%;
 }
+.footer th{
+    padding-right: 1em;
+}
+
 .footer td{
-    min-width: 100px;
+    max-width: 80%;
+    min-width: 70%;
     height:32px;
     margin-right: 30px;
     padding-left:15px;
@@ -847,7 +904,7 @@ color:floralwhite;}
 * For modern browsers
 * 1. The space content is one way to avoid an Opera bug when the
 *    `contenteditable` attribute is included anywhere else in the document.
-*    Otherwise it causes space to appear at the top and bottom of elements
+*    Otherwise it causes space to  top and bottom of elements
 *    that receive the `clearfix` class.
 * 2. The use of `table` rather than `block` is only necessary if using
 *    `:before` to contain the top-margins of child elements.
