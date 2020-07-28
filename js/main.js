@@ -45,7 +45,7 @@ function showItem(e){
 			     alert('Not enough money!!');
                   return null;
 		      }
-                wallet.innerText = `'$'${balance}`;
+                wallet.innerText = `$${balance}`;
                 alert('Remaining Balance :'+balance)
 		      return balance;
             }

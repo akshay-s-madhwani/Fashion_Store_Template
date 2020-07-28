@@ -187,7 +187,7 @@ body{
 }
 .headbar .nav-tag:nth-child(1){
   position: relative;
-    top: -5px;
+    top: -12px;
     margin-left: -7px;
     
 }
@@ -263,6 +263,7 @@ body{
   color:var(--fifth-purple);
     margin-left: -10px;
     margin-right: 5px;
+    margin-top: -10px;
 }
 
 .hover-link{
