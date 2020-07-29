@@ -253,6 +253,9 @@ body{
     .fa-search{
         font-size: 8pt;
     }
+    .hover-link{
+        font-size: 8.5pt
+    }
 }
 .user-icon{
   min-width: 29vw;
