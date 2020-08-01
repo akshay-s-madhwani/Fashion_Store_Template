@@ -9,11 +9,12 @@ function hov(nav, e){
 		$(e).hide();	
 	});
 };
-    
+
 hov(".men", ".men-link");
 hov(".women", ".women-link" );
 hov(".accessories", ".access-link");
 hov(".wallet-list-wrap", ".wallet-pop");
+hov(".category" , ".category a");    
             document.addEventListener('click', showItem);   
     const buyBtn = document.querySelector('.buy-btn');
     const close = document.querySelector('.close'); 
