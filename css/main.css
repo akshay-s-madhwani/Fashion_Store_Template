@@ -191,6 +191,32 @@ body{
     margin-left: -7px;
     align-self: baseline;
 }
+@media (min-device-height:200px) and (max-device-height:510px){
+    .headbar{
+        max-width: 80vw;
+    }
+    .front-header{
+        margin-top: -15vh;
+        
+    }
+    .front-img2{
+        max-height: 25vh;
+        margin-top: 0.5vh;
+        padding-left: 12vw;
+    }
+    .front-img{
+        max-height: 25vh;
+        margin-top: 1vh;
+        padding-left: 8vw
+    }
+    .slide-block{
+        margin-top: -22vw;
+            
+    }
+    .slide-img-wrap{
+    
+    }
+}
 @media (min-device-width: 1000px) and (min-device-height:1200px) {
   .headbar a{
     margin-left: 2rem;
@@ -255,9 +281,10 @@ body{
         height: 100px;
         position: static;
         justify-content:space-around;
+
     }
     .category-wrap{
-        display: none;
+        
         flex-flow: column nowrap;
         max-width:100px;
         position: fixed;
@@ -270,6 +297,7 @@ body{
         margin-left: 10px;
         position: relative;
         width:60px;
+        display: none
     }
 
      .headbar .nav-tag:nth-child(1){
@@ -491,7 +519,7 @@ box-sizing: border-box;
 .close{
     position: fixed;
     right:25vw;
-    font-size: 32pt;
+    font-size: 20pt;
 }
 .card-des{
     border-bottom: 1px #aaa solid;

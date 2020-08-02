@@ -15,7 +15,7 @@ hov(".women", ".women-link" );
 hov(".accessories", ".access-link");
 hov(".wallet-list-wrap", ".wallet-pop");    
 if(document.body.offsetWidth <= 520){
-    hov(".category" , ".castegory-wrap");    
+    hov(".category" , ".category a");    
     $(".category-wrap").css('display','flex');
     }
     
